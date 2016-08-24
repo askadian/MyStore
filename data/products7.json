@@ -1,0 +1,18 @@
+{"I007":   {
+    "mdl": 8,
+    "name": "coraline",
+    "category": "movies",
+    "price": 899.75,
+    "shortdesc": "coraline",
+    "description": "end game movie",
+    "longdesc": "end game movie",
+    "thumbnail": "https://s3.ap-south-1.amazonaws.com/mystorejjr/Coraline.jpg",
+    "tag": "featured",
+    "new": false,
+    "featured": true,
+    "price": 101.23,
+    "weight": 0.43,
+    "stock": 45,
+    "details": ""
+  }
+}

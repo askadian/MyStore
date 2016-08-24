@@ -286,6 +286,21 @@ body {
 	color:#FC7D01;
 	text-transform: uppercase;
 }
+/* AMRESH -- start */
+/**** li 1_0f_5 ****/
+.li_1_of_5 {
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+	box-shadow: 0px 0px 3px rgb(150, 150, 150);
+	-webkit-box-shadow: 0px 0px 3px rgb(150, 150, 150);
+	-moz-box-shadow: 0px 0px 3px rgb(150, 150, 150);
+	-o-box-shadow: 0px 0px 3px rgb(150, 150, 150);
+}
+.li_1_of_5:first-child {
+	margin-left: 0;
+}
+/* AMRESH -- end */
 /**** Grid 1_0f_5 ****/
 .grid_1_of_5 {
 	display: block;
@@ -1014,6 +1029,11 @@ body {
 	.content{
 		padding:0;
 	}
+	/* AMRESH -- start */
+	.li_1_of_5{
+		margin:10px 5px;
+	}
+	/* AMRESH -- end */
 	.grid_1_of_5{
 		margin:10px 5px;
 	}

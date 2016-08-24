@@ -1,0 +1,18 @@
+{"I001":   {
+    "mdl": 2,
+    "name": "Sororoty Wars",
+    "category": "movies",
+    "price": 620.87,
+    "shortdesc": "sororoty wars Movie",
+    "description": "end game movie",
+    "longdesc": "end game movie",
+    "thumbnail": "https://s3.ap-south-1.amazonaws.com/mystorejjr/Sorority_Wars.jpg",
+    "tag": "new",
+    "new": true,
+    "featured": false,
+    "price": 101.23,
+    "weight": 0.43,
+    "stock": 45,
+    "details": ""
+  }
+}

@@ -1,0 +1,38 @@
+{"products":
+{"I000":   {
+    "mdl": 1,
+    "name": "End Game",
+    "category": "movies",
+    "price": 620.87,
+    "shortdesc": "end game movie",
+    "description": "end game movie",
+    "longdesc": "end game movie",
+    "thumbnail": "https://s3.ap-south-1.amazonaws.com/mystorejjr/end-game.jpg",
+    "tag": "new",
+    "new": true,
+    "featured": false,
+    "price": 101.23,
+    "weight": 0.43,
+    "stock": 45,
+    "details": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>"
+  }
+},
+{"I001":   {
+    "mdl": 2,
+    "name": "Sororoty Wars",
+    "category": "movies",
+    "price": 620.87,
+    "shortdesc": "sororoty wars Movie",
+    "description": "end game movie",
+    "longdesc": "end game movie",
+    "thumbnail": "https://s3.ap-south-1.amazonaws.com/mystorejjr/Sorority_Wars.jpg",
+    "tag": "new",
+    "new": true,
+    "featured": false,
+    "price": 101.23,
+    "weight": 0.43,
+    "stock": 45,
+    "details": ""
+  }
+}
+}

@@ -1,0 +1,18 @@
+{"I003":   {
+    "mdl": 4,
+    "name": "Avatar",
+    "category": "movies",
+    "price": 599.00,
+    "shortdesc": "The avatar movie",
+    "description": "end game movie",
+    "longdesc": "end game movie",
+    "thumbnail": "https://s3.ap-south-1.amazonaws.com/mystorejjr/avatar_movie.jpg",
+    "tag": "new",
+    "new": true,
+    "featured": false,
+    "price": 101.23,
+    "weight": 0.43,
+    "stock": 45,
+    "details": ""
+  }
+}
