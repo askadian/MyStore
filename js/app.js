@@ -11,6 +11,10 @@ config(['$routeProvider',function($routeProvider) {
             templateUrl: 'partials/login.tpl.html',
             controller: 'HomeCtrl'
         })
+        .when('/Register', {
+            templateUrl: 'partials/register.tpl.html',
+            controller: 'HomeCtrl'
+        })
         .when('/Contact', {
             templateUrl: 'partials/contact.tpl.html',
             controller: 'HomeCtrl'
