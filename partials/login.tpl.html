@@ -10,14 +10,14 @@
 			<div class="col span_2_of_3">
 				<div class="contact-form">
 				<h2>Log in</h2>
-					<form>
+					<form ng-submit="login(user.email, user.password)">
 						<div>
 							<span><label>User's Registered Email</label></span>
-							<span><input name="userEmail" type="text" class="textbox"></span>
+							<span><input ng-model="user.email" name="userEmail" type="text" class="textbox"></span>
 						</div>
 						<div>
 							<span><label>Password</label></span>
-							<span><input name="userPassword" type="password" class="textbox"></span>
+							<span><input ng-model="user.password" name="userPassword" type="password" class="textbox"></span>
 						</div>
 						<div>
 							<span><input type="submit" value="Submit"  class="mybutton"></span>

@@ -1,0 +1,33 @@
+/users
+  |----uid
+  |----name
+  |----email
+  |----phone
+  |----cart
+         |----key of products
+  |----orders
+         |----key of products
+                 |-------------status: processing, open, dispached, delivered, returned, error, ...
+  |----wishlist
+         |----key of products
+  |----specials
+         |----key of products
+  |----offers
+         |----key of products
+
+
+/products
+  |----pid
+  |----name
+  |----desc
+  |----price
+  |----related
+         |----key of products
+  |----thumbnail
+         |----short
+         |----medium
+         |----big
+  |-[]-img
+         |----short
+         |----medium
+         |----big

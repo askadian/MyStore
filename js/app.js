@@ -19,7 +19,7 @@ config(['$routeProvider',function($routeProvider) {
             templateUrl: 'partials/contact.tpl.html',
             controller: 'HomeCtrl'
         })
-        .when('/Preview/:mdl', {
+        .when('/Preview/:productId', {
             templateUrl: 'partials/preview.tpl.html',
             controller: 'PreviewCtrl'
         })
@@ -36,8 +36,19 @@ appModule.controller('HeaderCtrl', ['$location', '$rootScope', '$scope', functio
     };
     console.log($rootScope.curLoc + ": In Header Controller.");
     $rootScope.$on('changeHeader', function (event, params) {
-        console.log("Came back to Header Controller with value: " + params.key);
-});
+        //...
+    });
+
+    $scope.login = function(userEmail, userPassword){
+        var    email    = userEmail;
+        var    password = userPassword;
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log("ERROR CODE: ", errorCode);
+            console.log("ERROR MESSAGE: ", errorMessage);
+        });
+    };
 }]);
 
 appModule.controller('FooterCtrl', ['', function() {
@@ -46,17 +57,18 @@ appModule.controller('FooterCtrl', ['', function() {
 ]);
 
 appModule.controller('HomeCtrl', ['$location', '$rootScope', '$scope', '$firebaseArray', function($location, $rootScope, $scope, $firebaseArray) {
-    console.log($rootScope.curLoc + ": In Home Controller.");
+
     $rootScope.curLoc = $location.path();
-    var ref = new Firebase('https://mystore-f6c12.firebaseio.com/products/');
     if ($rootScope.curLoc === '/') {
         $rootScope.header.bottom = true;
 
     } else {
         $rootScope.header.bottom = false;
     }
-
-    $scope.data = $firebaseArray(ref);
+    var ref = firebase.database().ref("products");
+    
+    var list = $firebaseArray(ref);
+    $scope.data = list;
 
     $rootScope.$broadcast('changeHeader', {key: "abc"});
 }]);
@@ -64,13 +76,9 @@ appModule.controller('HomeCtrl', ['$location', '$rootScope', '$scope', '$firebas
 appModule.controller('PreviewCtrl', ['$rootScope', '$scope', '$routeParams', '$firebaseObject', function($rootScope, $scope, $routeParams, $firebaseObject) {
     $rootScope.header.bottom = false;
     $rootScope.$broadcast('changeHeader', {key: "abc"});
-    $scope.model = +$routeParams.mdl;
-    console.log($scope.model + ": In Preview Controller.");
-    var ref = new Firebase('https://mystore-f6c12.firebaseio.com/products/');
-    ref.orderByChild("mdl").startAt($scope.model).endAt($scope.model).on("child_added", function(snapshot) {
-      console.log(snapshot.key() + " was " + snapshot.val().mdl + " meters tall");
-      $scope.previewProduct = snapshot.val();
-    });
-    //ref.off();
+    $scope.productId = $routeParams.productId;
+
+    var ref = $firebaseObject(firebase.database().ref('products/' + $scope.productId));
+    $scope.previewProduct = ref;
 }
 ]);

@@ -1,0 +1,102 @@
+https://mystore-f6c12.firebaseio.com/
+
+
+
+mystore-f6c12
+	|
+       [-]--- -KQ0L0KtDVC8eord2Ig8
+        |       |
+        |      [-]--- name
+        |               |
+        |               |--- first: "Ada"
+        |               |--- last: "Lovelace"
+        |
+       [-]--- -KQ0NfDzUp2nWpYIEhDI
+        |       |
+        |      [-]--- users
+        |               |
+        |              [-]--- ada
+        |               |      |
+        |               |      |--- first: "Ada"
+        |               |      |--- last: "Lovelace"
+        |               |
+        |              [-]--- alan
+        |                      |
+        |                      |--- first: "Alan"
+        |                      |--- last: "Turing"
+        |        
+        |       
+       [-]--- ada
+        |       |
+        |      [-]--- -KQ0KjJb7bLrlPeXW48J
+        |                   |
+        |                  [-]--- name
+        |                           |
+        |                           |--- first: "Ada"
+        |                           |--- last: "Lovelace"
+        |       
+        |       
+       [-]--- users
+                |
+               [-]--- -KQ0MaEdbif7goJIgvGa
+                |       |
+                |      [-]--- ada
+                |              |
+                |              |--- first: "Ada"
+                |              |--- last: "Lovelace"
+                |
+               [-]--- -KQ0N-rEWUqROInJtDBF
+                |      [-]--- alan
+                |              |
+                |              |--- first: "Alan"
+                |              |--- last: "Turing"
+                |        
+                [-]--- ada
+                |       |
+                |       |--- first: "Ada"
+                |       |--- last: "Lovelace"
+                |       |
+                |      [-]--- name
+                |              |
+                |              |--- first: "Ada"
+                |              |--- last: "Lovelace"
+                |        
+                [-]--- alan
+                        |
+                        |--- first: "Alan"
+                        |--- last: "Turing"
+                        |
+                       [-]--- name
+                               |
+                               |--- first: "Alan"
+                               |--- last: "Turing"
+
+
+
+
+
+
+
+"Key": "Value"
+
+Key ==> Number or String
+Value ==> Number or String or Object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
