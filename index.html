@@ -46,12 +46,16 @@
 								<a href="#/"><img src="images/logo.png" alt="" /></a>
 							</div>
 								<div class="header_top_right">
-								<div class="cart">
-									<p><span>Cart</span><div id="dd" class="wrapper-dropdown-2"> (empty)
-										<ul class="dropdown">
-												<li>you have no items in your Shopping cart</li>
-										</ul></div></p>
-								</div>
+									<div class="cart" ng-model="cart">
+										<p>
+											<span>Cart</span>
+											<div id="dd" class="wrapper-dropdown-2"> (empty)
+												<ul class="dropdown">
+														<li>you have {{ cart.count }} items in your Shopping cart</li>
+												</ul>
+											</div>
+										</p>
+									</div>
 									<div class="search_box">
 										<form>
 											<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
@@ -124,7 +128,7 @@
 		<div ng-view></div>
 	</div> <!-- end main  -->
 	<!------------ ng-View End ------------>
-	<div class="footer" ng-controller="FooterCtrl">
+	<div class="footer">
 		<div class="wrap">	
 			<div class="section group">
 					<div class="col_1_of_4 span_1_of_4">

@@ -351,7 +351,7 @@ body {
 	color:#383838;
 }
 .add-cart{
-	float:right;
+	/*float:right;*/
 	display: inline-block;
 }
 .add-cart h4 a{
@@ -371,6 +371,8 @@ body {
 .add-cart h4 a:hover{
 	  text-shadow: 0px 0px 1px #000;
 	  background:#292929;
+	  cursor: pointer; 
+	  cursor: hand; 
 }
 /*** Footer ***/
 .footer {

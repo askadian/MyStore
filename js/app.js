@@ -39,24 +39,31 @@ appModule.controller('HeaderCtrl', ['$location', '$rootScope', '$scope', functio
         //...
     });
 
+    $rootScope.cart = {
+        count: 0
+    };
+
     $scope.login = function(userEmail, userPassword){
         var    email    = userEmail;
         var    password = userPassword;
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
+            console.log('Auth data after login', firebase.auth())
+            console.log('Current user is ', firebase.auth().currentUser)
+        }).catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log("ERROR CODE: ", errorCode);
             console.log("ERROR MESSAGE: ", errorMessage);
         });
-    };
+    }; //end of login()
 }]);
 
-appModule.controller('FooterCtrl', ['', function() {
-    console.log('footer' + ": In Footer Controller.");
-}
-]);
+// appModule.controller('FooterCtrl', ['', function() {
+//     console.log('footer' + ": In Footer Controller.");
+// }
+// ]);
 
-appModule.controller('HomeCtrl', ['$location', '$rootScope', '$scope', '$firebaseArray', function($location, $rootScope, $scope, $firebaseArray) {
+appModule.controller('HomeCtrl', ['$location', '$rootScope', '$scope', '$firebaseArray', '$firebaseAuth', function($location, $rootScope, $scope, $firebaseArray, $firebaseAuth) {
 
     $rootScope.curLoc = $location.path();
     if ($rootScope.curLoc === '/') {
@@ -71,6 +78,30 @@ appModule.controller('HomeCtrl', ['$location', '$rootScope', '$scope', '$firebas
     $scope.data = list;
 
     $rootScope.$broadcast('changeHeader', {key: "abc"});
+
+    $scope.addToCart = function(productId) {
+        console.log("Inside addToCart(). ", productId);
+
+        var auth = firebase.auth();
+        console.log('Auth data ', auth)
+        var provider = new firebase.auth.EmailAuthProvider();
+        console.log('Current user is ', auth.currentUser);
+        auth.signInWithPopup(provider).then(function(result) {
+            console.log("User signed in!");
+            var uid = result.user.uid;
+        }).catch(function(error) {
+            console.log("User NOT signed in!");
+        });
+        var uid = 'yC0Az3hkRJNkAyinScMhvNz5Dst1';
+        var newPostKey = firebase.database().ref().child('users/' + uid + '/cart/' + productId).set({
+            pid: productId,
+            price: 100.12,
+            qty: 1,
+            status: "processing"
+        });
+        $rootScope.cart.count++;
+
+    }; //end addToCart()
 }]);
 
 appModule.controller('PreviewCtrl', ['$rootScope', '$scope', '$routeParams', '$firebaseObject', function($rootScope, $scope, $routeParams, $firebaseObject) {
