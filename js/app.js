@@ -76,6 +76,7 @@ appModule.controller('HomeCtrl', ['$location', '$rootScope', '$scope', '$firebas
     
     var list = $firebaseArray(ref);
     $scope.data = list;
+    // $rootScope.cart.count = ref()
 
     $rootScope.$broadcast('changeHeader', {key: "abc"});
 
@@ -98,10 +99,39 @@ appModule.controller('HomeCtrl', ['$location', '$rootScope', '$scope', '$firebas
             price: 100.12,
             qty: 1,
             status: "processing"
+        }).then(function() {
+            var cartCount = firebase.database().ref('users/' + uid + '/cart/').once('value')
+            .then(function(snapshot) {
+                // console.log("count!!", snapshot.val().count);
+                var x = snapshot.val().count;
+                x++;
+                
+                firebase.database().ref().child('users/' + uid + '/cart/').update(
+                    { count: snapshot.val().count + 1}
+                ).then(function() {
+                    $rootScope.cart.count = x;
+                });
+                return x;
+            });
+            // var newPostKey = firebase.database().ref().child('users/' + uid + '/cart/').update(
+            //     {
+            //         count: count + 1
+            //     }
+            // );
         });
-        $rootScope.cart.count++;
+        // var newPostKey = firebase.database().ref().child('users/' + uid + '/cart/').push(
+        //     {
+        //         pid: productId
+        //     }
+        // );
 
     }; //end addToCart()
+
+    function logArrayElements(element, index, array) {
+        console.log('a[' + index + '] = ' + element);
+    }
+    // list.logArrayElements();
+    // console.log("MAPPED: ", x()); 
 }]);
 
 appModule.controller('PreviewCtrl', ['$rootScope', '$scope', '$routeParams', '$firebaseObject', function($rootScope, $scope, $routeParams, $firebaseObject) {

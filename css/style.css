@@ -264,6 +264,11 @@ body {
 	width:74%;
 	padding-left:1%;
 }
+/* AMRESH KADIAN - Banner */
+.header_bottom_right div div div img{
+	height: 455px;
+}
+/* AMRESH KADIAN - Banner : ENDS HERE */
 /***** Content *****/
 .content {
 	padding: 20px 0;
@@ -288,6 +293,7 @@ body {
 }
 /* AMRESH -- start */
 /**** li 1_0f_5 ****/
+/*
 .li_1_of_5 {
 	display: block;
 	float: left;
@@ -300,12 +306,13 @@ body {
 .li_1_of_5:first-child {
 	margin-left: 0;
 }
+*/
 /* AMRESH -- end */
 /**** Grid 1_0f_5 ****/
 .grid_1_of_5 {
 	display: block;
 	float: left;
-	margin: 1% 0 1% 1.6%;
+	margin: 1% 15px 1% 1.6%;
 	box-shadow: 0px 0px 3px rgb(150, 150, 150);
 	-webkit-box-shadow: 0px 0px 3px rgb(150, 150, 150);
 	-moz-box-shadow: 0px 0px 3px rgb(150, 150, 150);
@@ -345,6 +352,12 @@ body {
 .price-number{
 	float: left;
 }
+/* AMRESH KADIAN changes for discounted Price */
+.discounted-price-number{
+	float: left;
+	text-decoration: line-through;
+}
+/* AMRESH KADIAN changes for discounted Price - END HERE */
 .price-details p span.rupees{
 	font-size:1.2em;
 	font-family: 'ambleregular';

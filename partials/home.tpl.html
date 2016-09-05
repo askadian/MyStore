@@ -1,29 +1,57 @@
 <div class="wrap">
     <div class="content">
-        <!--div-->
+            <!-- For Discounted Products -->
             <div class="content_top">
+                <div class="heading">
+                    <h3>Discounts </h3>
+                </div>
+            </div>
+            <div class="section group">
+			  <ul ng-repeat="product in data">
+						<li ng-show="product.discount">
+                            <div class="grid_1_of_5 images_1_of_5">
+                                <a href="#/Preview/{{ product.pid }}"><img ng-src="{{ product.thumbnail }} " alt="" /></a>
+                                <h2><a href="#/Preview/{{ product.pid }}">{{ product.name }}</a></h2>
+                                <div class="price-details">
+                                    <div class="discounted-price-number">
+                                        <p><span class="rupees">&#8377;{{ product.price }}</span></p>
+                                    </div>
+                                    <div class="add-cart">								
+                                        <h4><a ng-click="addToCart(product.pid)">Add to Cart</a></h4>
+                                    </div>
+                                    <div class="price-number">
+                                        <p><span class="rupees">&#8377;{{ product.price - 20 }}</span></p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>	
+						</li>		
+			  </ul>
+            </div>
+        <!--div-->
+            <div class="content_top" ng-show="data[0].new">
                 <div class="heading">
                     <h3>New Products </h3>
                 </div>
             </div>
             <div class="section group">
-                <ul ng-repeat="product in data">
-                    <li ng-show="product.new">
-                        <div class="grid_1_of_5 images_1_of_5">
+			  <ul ng-repeat="product in data">
+						<li ng-show="product.new">
+                            <div class="grid_1_of_5 images_1_of_5">
                                 <a href="#/Preview/{{ product.pid }}"><img ng-src="{{ product.thumbnail }} " alt="" /></a>
                                 <h2><a href="#/Preview/{{ product.pid }}">{{ product.name }}</a></h2>
-                            <div class="price-details">
-                                <div class="price-number">
-                                    <p><span class="rupees">&#8377;{{ product.price }}</span></p>
+                                <div class="price-details">
+                                    <div class="price-number">
+                                        <p><span class="rupees">&#8377;{{ product.price }}</span></p>
+                                    </div>
+                                            <div class="add-cart">								
+                                                <h4><a ng-click="addToCart(product.pid)">Add to Cart</a></h4>
+                                                </div>
+                                            <div class="clear"></div>
                                 </div>
-                                        <div class="add-cart">								
-                                            <h4><a ng-click="addToCart(product.pid)">Add to Cart</a></h4>
-                                            </div>
-                                        <div class="clear"></div>
-                            </div>					 
-                        </div>
-                    </li>
-                </ul>
+                            </div>	
+						</li>		
+			  </ul>
             </div>
         <!--/div-->
         <!-- Featured Products -->
